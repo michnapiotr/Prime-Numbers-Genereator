@@ -38,9 +38,10 @@ namespace Prime_Numbers_Genereator
             //Staring the main loop
             while (even_nums.Count != user)
             {
-                for (int a = 2; a < Math.Pow(user, 3); a++)
+                //Starting nested loop analysing possible combinations
+                for (int a = 2; a < user * 10; a++)
                 {
-                    for (int b = 2; b < Math.Pow(user, 3); b++)
+                    for (int b = 2; b < user * 10; b++)
                     {
                         if (a != b && a % b == 0)
                         {
@@ -66,13 +67,14 @@ namespace Prime_Numbers_Genereator
                 }
 
             }
-
+            //returning list of results
             return even_nums;
 
         }
 
         static void Main(string[] args)
         {
+            //running 'Primes' method and displaying results
             Console.WriteLine("The numbers you asked for are: " + String.Join(",", Primes()));
         }
 
